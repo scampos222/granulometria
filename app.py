@@ -60,3 +60,13 @@ with st.expander("Ver detalles técnicos del proceso"):
     *   **Hidrómetro 151 H / 152 H:** La corrección varía según el modelo.
     *   **Dispersión:** Usar 50g para limos/arcillas o 100g para arenas con 125 ml de solución (40 g/litro).
     """)
+# Convertir el gráfico a formato PNG en memoria
+png_bytes = dot.pipe(format='png')
+
+# Agregar el botón de descarga a Streamlit
+st.download_button(
+    label="📥 Descargar Diagrama (PNG)",
+    data=png_bytes,
+    file_name="diagrama_suelos.png",
+    mime="image/png"
+)
